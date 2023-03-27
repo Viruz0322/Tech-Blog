@@ -1,7 +1,10 @@
 
 {{!-- TODO - write the template to show all posts on the / route --}}
 <h1>All POSTS</h1>
-{{#if username}}
-<p>Hello, {{username}}</p>
-{{/if}}
-
+{{!-- iterate through each post and show it as a div with the post inside --}}
+{{#each post}}
+    <div class="post">
+        <h2 class="post-title">{{ title }}</h2>
+        <p class="post-body">{{ body }}</p>
+    </div>
+{{/each}}
