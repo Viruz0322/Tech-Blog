@@ -60,14 +60,16 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
         if (!postDelete) {
             res.status(404).json({
                 message: 'No post with that Id found'
-            })
+            });
         } else {
             res.status(200).json({
                 message: 'Post deleted!'
             });
         }
+    } catch (error) {
+        res.status(500).json(error)
     }
-})
+});
 
 
 module.exports = router;
