@@ -60,13 +60,17 @@ router.post('/login', async (req, res) => {
 
 // POST /api/users/logout is a logout route for an existing user, 
 //it also destroys the session so the user is no longer logged in
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
+router.post('/logout', async  (req, res) => {
+  try {
+    if (req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+    } catch (err) {
+      res.status(500).json(err)
   }
 });
 
