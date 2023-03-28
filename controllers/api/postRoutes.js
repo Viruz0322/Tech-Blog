@@ -8,17 +8,19 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
     try {
         //Post.create is what actualy creates the new post in MySQL
-        const newPost = await Post.create({
+        await Post.create({
             title: req.body.title,
             body: req.body.body,
             userId: req.body.userId,
         });
 
-        res.status(200).json(newPost);
+        res.status(200).json({
+            message: 'Post created successfully!'
+        });
     } catch (err) {
         res.status(500).json(err);
     }
-});
+}); 
 
 // TODO - create a PUT route for updating a post's title or body
 // This should be a protected route, so you'll need to use the withAuth middleware

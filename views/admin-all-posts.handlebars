@@ -1,5 +1,12 @@
-<a href="/dashboard/create">Create Post</a>
-<h1>My Posts</h1>
-{{#each posts as | userPost | }}
-{{> post this}}
-{{/each}} 
+{{!-- THIS SHOWS ONLY THE POSTS --}}
+<div class="post-banner">
+    <h1>Todays Posts are: </h1>
+    <div class="all-posts">
+        {{#each posts}}
+        {{> post this}}
+        {{/each}}   
+    </div>    
+
+   <a href="/dashboard/create">Create Post</a>
+</div>
+

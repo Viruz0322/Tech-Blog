@@ -1,6 +1,37 @@
-<div>
-    <h2>{{userPost.title}}</h2>
-    <p>{{userPost.body}}</p>
-    <p>Posted by {{userPost.username}}</p>
-    <p>Posted on {{userPost.createdAt}}</p>
+<link rel="stylesheet" href="../public/css/post.css">
+<div class="posts">
+    <ul class="comment-list">
+        <li>
+            <div class="post-card">
+                <div class="post-info">
+                    <h5 class="name">{{ post.title }}</h5>
+                    <h6 class="user">{{ post.user.username }}</h6>
+                    <p class="date">{{ post.createdAt }}</p>
+                </div>
+                <article class="post-text">
+                    {{ post.body}}
+                </article>
+                <div class="comment-option">
+                    <button id="showcomments_{{post.id}}" data-id="{{post.id}}">Show Comments</button>
+                </div>
+                <div class="hideSection" id="hideSection_{{post.id}}">
+                    <h4>Comments</h4>
+                    <div class="post-comment">
+                        {{#each post.comments}}
+                        {{> comment this}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="comment-edit">
+                    <h5>Write a comment</h5>
+                    <textarea name="comment-edit" id="comment-edit-{{post.id}}" class="comment-edit-textarea" cols="0" rows="0"></textarea>
+                    <p class="comment-message">Please enter more than one character to accept comment.</p>
+                    <div class="comment-edit-option">
+                        <button id="makeComment-{{post.id}}" data-id="{{post.id}}" type="submit" data-action="submit">submit</button>
+                        <button data-action="cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>

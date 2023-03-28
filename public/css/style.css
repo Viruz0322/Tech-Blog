@@ -1,2 +1,5 @@
-
-/* TODO - Write your CSS here */
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+}

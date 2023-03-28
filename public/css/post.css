@@ -1,0 +1,126 @@
+.post-card {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.7)
+        rgba(255, 255, 255, 0.1)
+    );
+    z-index: -1;
+}
+
+.post-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.name {
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+.user {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.date {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.post-text {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.comment-options {
+    margin-bottom: 10px;
+}
+
+.comment-options button {
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+.comment-options button:hover {
+    background-color: #666;
+}
+
+.hideSection {
+    display: none;
+    margin-top: 10px;
+}
+
+.comment-edit {
+    border-top: 1px solid #ccc;
+    margin-top:20px;
+    padding-top: 20px;
+}
+
+.comment-edit h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.comment-edit-textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.comment-message {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #ff0000;
+    font-size: 14px;
+}
+
+.comment-edit-options {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-edit-options button {
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 5px
+}
+

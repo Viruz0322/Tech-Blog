@@ -29,6 +29,17 @@ router.delete('/', withAuth, async (req, res) => {
                 id: req.params.id
             }
         });
+
+        if (!deletedComment) {
+            res.status(404).json({
+                message: 'No comment with that Id found!'
+            });
+            return;
+        }
+
+        res.status(200).json({
+            message: 'Comment deleted successfully!'
+        });
     } catch (error) {
         res.status(500).json(error);
     }
